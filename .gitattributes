@@ -1,0 +1,5 @@
+# The working tree is the live mod - the game loads it through a junction - so
+# nothing may be rewritten on checkout. main.js in particular is ASCII-only by
+# design and must stay byte-for-byte what was tested.
+* text=auto eol=lf
+*.png binary
