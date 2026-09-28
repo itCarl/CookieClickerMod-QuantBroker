@@ -36,6 +36,8 @@
 
 ## About The Project
 
+![The assistant's panel in the Bank](docs/screenshots/qb-panel.png)
+
 Most market mods trade every good at a fixed multiple of its resting value. The
 game's real price distribution is wide, not centred on the resting value, and
 different for each of the sixteen goods, so one multiple cannot fit them all.
