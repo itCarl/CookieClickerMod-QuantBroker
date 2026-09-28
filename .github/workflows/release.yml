@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Tests cannot run here: moddev loads the game's own sources from a
+      # local Steam install (GAME_DIR in the harness scripts), which this
+      # runner does not have. Run `cd moddev && node test.js` locally
+      # before tagging.
+
+      - name: Tag must match main.js VERSION
+        run: |
+          V="$(sed -n "s/^var VERSION *= *'\([^']*\)'.*/\1/p" mod/main.js)"
+          if [ "v$V" != "${GITHUB_REF_NAME}" ]; then
+            echo "Tag ${GITHUB_REF_NAME} does not match main.js VERSION v$V"
+            exit 1
+          fi
+
+      - name: main.js must be ASCII only
+        run: |
+          if grep -qP '[^\x00-\x7F]' mod/main.js; then
+            grep -nP '[^\x00-\x7F]' mod/main.js
+            exit 1
+          fi
+
+      - name: Zip the mod folder
+        run: |
+          cd mod
+          zip -r ../QuantBroker.zip .
+
+      - name: Create the release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Quant Broker ${{ github.ref_name }}"
+          files: QuantBroker.zip
