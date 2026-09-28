@@ -667,8 +667,11 @@ section('reasoning column');
 	const t = boot({}, {dom: true});
 	step(t.world, 400);
 	const cells = t.world.M.goodsById.map((g, i) => t.document.getElementById('qbC-' + i + '-note'));
-	const tips  = cells.map((c) => c.title || '');
-	const shown = cells.map((c) => c.textContent || '');
+	// The mod writes the tooltip with setAttribute and the cell body with
+	// innerHTML, so read both back the same way - the shim keeps attributes
+	// in getAttribute and never mirrors them onto .title / .textContent.
+	const tips  = cells.map((c) => c.getAttribute('title') || '');
+	const shown = cells.map((c) => (c.innerHTML || '').replace(/<[^>]*>/g, ''));
 
 	check('every visible good explains itself', tips.every((n) => n.length > 0),
 		JSON.stringify(tips.slice(0, 2)));

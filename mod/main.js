@@ -20,7 +20,7 @@
 'use strict';
 
 var MOD_ID   = 'quant broker';
-var VERSION  = '1.2';
+var VERSION  = '1.3';
 var PANEL_ID = 'quantBrokerPanel';
 
 // M.buyGood/M.sellGood treat n === 10000 as "as many as cookies allow" / "all
@@ -1045,12 +1045,14 @@ function unrealized(m) {
  * ------------------------------------------------------------------ */
 
 var CSS = [
-	'#' + PANEL_ID + '{margin:6px 4px 4px 4px;padding:8px;border:1px solid #79c600;border-radius:4px;',
-	'background:rgba(0,0,0,0.82);box-shadow:0 0 4px rgba(0,0,0,0.5) inset;color:#e8e8e8;font-size:14px;}',
-	'#' + PANEL_ID + ' .qbRow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;}',
+	'#' + PANEL_ID + '{position:relative;z-index:120;margin:0;padding:8px 24px 10px 24px;',
+	'background:rgba(0,0,0,0.82);color:#e8e8e8;font-size:14px;',
+	'border-top:1px solid #79c600;box-shadow:0 0 8px rgba(0,0,0,0.6) inset;text-align:left;}',
+	'#' + PANEL_ID + ' .qbRow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:4px 0;}',
 	'#' + PANEL_ID + ' .qbTitle{font-weight:bold;color:#94cd50;letter-spacing:1px;}',
+	'#' + PANEL_ID + ' .qbVer{font-weight:normal;font-size:10px;letter-spacing:0;opacity:0.55;margin-left:5px;}',
 	'#' + PANEL_ID + ' .qbBtn{cursor:pointer;border:1px solid rgba(255,255,255,0.35);border-radius:3px;',
-	'padding:1px 8px;font-weight:bold;font-size:13px;background:rgba(255,255,255,0.08);color:#fff;}',
+	'padding:1px 9px;font-weight:bold;font-size:13px;background:rgba(255,255,255,0.08);color:#fff;}',
 	'#' + PANEL_ID + ' .qbBtn:hover{background:rgba(255,255,255,0.2);}',
 	'#' + PANEL_ID + ' .qbBtn.qbOn{background:#94cd50;color:#000;border-color:#cfe9a8;}',
 	'#' + PANEL_ID + ' .qbBtn.qbOff{background:#c23b3b;color:#fff;border-color:#f0a0a0;}',
@@ -1059,7 +1061,7 @@ var CSS = [
 	// Fixed-width labels so the two figures line up under each other.
 	'#' + PANEL_ID + ' .qbLabel{display:inline-block;min-width:62px;color:#8fae62;}',
 	'#' + PANEL_ID + ' .qbStat b{color:#fff;}',
-	'#' + PANEL_ID + ' .qbSep{border:0;height:1px;background:#4a4a4a;margin:6px 0;}',
+	'#' + PANEL_ID + ' .qbSep{border:0;height:1px;background:#3f3f3f;margin:6px 0;}',
 	'#' + PANEL_ID + ' table{width:100%;border-collapse:collapse;font-family:monospace;font-size:13px;}',
 	'#' + PANEL_ID + ' th{color:#8fae62;font-weight:normal;text-align:right;padding:3px 9px;border-bottom:1px solid #444;}',
 	'#' + PANEL_ID + ' th:first-child,#' + PANEL_ID + ' td:first-child{text-align:left;}',
@@ -1096,7 +1098,7 @@ var CSS = [
 	'#' + PANEL_ID + ' .qbSet label{flex:1;color:#ccc;}',
 	'#' + PANEL_ID + ' .qbSet input[type=number]{width:70px;background:#111;color:#fff;',
 	'border:1px solid #555;border-radius:2px;padding:1px 3px;font-family:monospace;}',
-	'#' + PANEL_ID + ' .qbNote{font-size:12px;color:#888;font-style:italic;}'
+	'#' + PANEL_ID + ' .qbNote{font-size:12px;color:#9a9a9a;max-width:640px;line-height:1.4;}'
 ].join('');
 
 /* ------------------------------------------------------------------ *
@@ -1477,7 +1479,7 @@ function buildPanel(host, m) {
 	panel.id = PANEL_ID;
 
 	var head = '<div class="qbRow">' +
-		'<span class="qbTitle">QUANT BROKER v' + VERSION + '</span>' +
+		'<span class="qbTitle">QUANT BROKER<span class="qbVer">v' + VERSION + '</span></span>' +
 		'<div class="qbBtn" data-act="toggle" id="qbToggle">-</div>' +
 		'<div class="qbBtn" data-act="settings">Settings</div>' +
 		'<div class="qbBtn" data-act="fill">Fill warehouses</div>' +

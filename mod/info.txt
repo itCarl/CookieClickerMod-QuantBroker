@@ -3,7 +3,7 @@
  "ID": "quant broker",
  "Author": "it.Carl",
  "Description": "A stock market assistant for the Bank. It learns each good's own price distribution online instead of trading off fixed multiples of the resting value, tracks a cost basis so it never sells below what it paid, detects the game's market-wide shock events and buys the crashes they cause, and caps how much of your cookie bank it may tie up so you can still afford buildings. Every row of the panel explains what it is waiting for. Adjustable in-game; every default was picked by benchmarking against the game's own market model.",
- "ModVersion": 1.2,
+ "ModVersion": 1.3,
  "GameVersion": 2.053,
  "Date": "21/08/2026",
  "Dependencies": [],
