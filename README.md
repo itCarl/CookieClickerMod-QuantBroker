@@ -8,16 +8,16 @@
   <p align="center">
     A stock market assistant for Cookie Clicker's Bank minigame that learns what each good is worth and never sells at a loss.
     <br />
-    <a href="https://github.com/itCarl/cookie-clicker-quant-broker/releases"><strong>Download the latest release</strong></a>
+    <a href="https://github.com/itCarl/QuantBroker/releases"><strong>Download the latest release</strong></a>
     <br />
     <br />
-    <a href="https://github.com/itCarl/cookie-clicker-quant-broker/issues/new?labels=bug">Report Bug</a>
+    <a href="https://github.com/itCarl/QuantBroker/issues/new?labels=bug">Report Bug</a>
     &middot;
-    <a href="https://github.com/itCarl/cookie-clicker-quant-broker/issues/new?labels=enhancement">Request Feature</a>
+    <a href="https://github.com/itCarl/QuantBroker/issues/new?labels=enhancement">Request Feature</a>
   </p>
 
-  <a href="https://github.com/itCarl/cookie-clicker-quant-broker/releases"><img src="https://img.shields.io/github/v/release/itCarl/cookie-clicker-quant-broker" alt="Release"></a>
-  <a href="https://github.com/itCarl/cookie-clicker-quant-broker/actions/workflows/release.yml"><img src="https://github.com/itCarl/cookie-clicker-quant-broker/actions/workflows/release.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/itCarl/QuantBroker/releases"><img src="https://img.shields.io/github/v/release/itCarl/QuantBroker" alt="Release"></a>
+  <a href="https://github.com/itCarl/QuantBroker/actions/workflows/release.yml"><img src="https://github.com/itCarl/QuantBroker/actions/workflows/release.yml/badge.svg" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
 </div>
 
@@ -85,7 +85,7 @@ Against a fixed-threshold reference it earns +28% net cookies, winning on 10 of
 https://steamcommunity.com/sharedfiles/filedetails/?id=3786776073
 
 **Manual:** download `QuantBroker.zip` from the
-[GitHub Releases](https://github.com/itCarl/cookie-clicker-quant-broker/releases)
+[GitHub Releases](https://github.com/itCarl/QuantBroker/releases)
 page and unzip it into:
 
 ```
