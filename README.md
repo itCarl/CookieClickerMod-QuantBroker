@@ -107,6 +107,13 @@ a sample lands above it and down by `lr*(1-p)` when it lands below converges
 where `P(price < q) = p`. The assistant buys below the 34th percentile, sells
 above the 66th, and keeps riding a position while it is still climbing.
 
+![Price histogram of one good with the buy and sell quantiles marked](docs/graphs/quantiles.svg)
+
+The distribution is wide, skewed and different for every good - which is why a
+fixed multiple of the resting value cannot fit them all, and two learned
+numbers per good can. (`node moddev/graphs.js` regenerates every figure here
+from the simulated market the tests use.)
+
 **Cost basis.** Every buy records what it paid, including overhead; every sell
 settles against it. The market mean-reverts toward the resting value, so
 holding a loser costs only warehouse space - enabling a stop-loss measured
@@ -120,9 +127,13 @@ direction, it is a shock. On a crash the buy line relaxes by 40% for two ticks
 and the stale regime state of the hit goods is ignored; on a spike, profitable
 positions are sold into it.
 
+![Three goods' prices collapsing on the same tick](docs/graphs/shock.svg)
+
 **Forecast.** A Monte Carlo run of the next 15 minutes of market ticks is drawn
 into the Dough Jones graph as dotted medians with a shaded 10-90 band.
 `moddev/forecast_check.js` checks that the band is honestly calibrated.
+
+![Median forecast and 10-90 band over 200 simulated futures, with one real path](docs/graphs/forecast.svg)
 
 **Robustness.** Settings, stats, cost bases and learned quantiles persist as
 about 2 KB of JSON. The mod never calls `buyGood` with exactly 10,000 units
