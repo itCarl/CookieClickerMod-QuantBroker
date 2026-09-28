@@ -1,10 +1,40 @@
-# Quant Broker
+<a id="readme-top"></a>
 
-A stock market assistant for Cookie Clicker's Bank minigame that learns what each good is worth and never sells at a loss.
+<div align="center">
+  <img src="docs/logo.png" alt="Logo" width="128" height="128">
 
-![Release](https://img.shields.io/github/v/release/itCarl/cookie-clicker-quant-broker) ![CI](https://github.com/itCarl/cookie-clicker-quant-broker/actions/workflows/release.yml/badge.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  <h3 align="center">Quant Broker</h3>
 
-## About
+  <p align="center">
+    A stock market assistant for Cookie Clicker's Bank minigame that learns what each good is worth and never sells at a loss.
+    <br />
+    <a href="https://github.com/itCarl/cookie-clicker-quant-broker/releases"><strong>Download the latest release</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/itCarl/cookie-clicker-quant-broker/issues/new?labels=bug">Report Bug</a>
+    &middot;
+    <a href="https://github.com/itCarl/cookie-clicker-quant-broker/issues/new?labels=enhancement">Request Feature</a>
+  </p>
+
+  <a href="https://github.com/itCarl/cookie-clicker-quant-broker/releases"><img src="https://img.shields.io/github/v/release/itCarl/cookie-clicker-quant-broker" alt="Release"></a>
+  <a href="https://github.com/itCarl/cookie-clicker-quant-broker/actions/workflows/release.yml"><img src="https://github.com/itCarl/cookie-clicker-quant-broker/actions/workflows/release.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+</div>
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#development">Development</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+## About The Project
 
 Most market mods trade every good at a fixed multiple of its resting value. The
 game's real price distribution is wide, not centred on the resting value, and
@@ -23,6 +53,8 @@ Quant Broker does not use fixed multiples. It:
 
 Against a fixed-threshold reference it earns +28% net cookies, winning on 10 of
 10 seeds, from a quarter of the traded volume.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
 
@@ -45,6 +77,8 @@ Against a fixed-threshold reference it earns +28% net cookies, winning on 10 of
 - Reconciles against manual trades and handles ascension cleanly.
 - No globals, no monkey-patching; driven by the documented `logic` mod hook.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Installation
 
 **Steam Workshop:** subscribe at
@@ -62,7 +96,9 @@ Restart the game and enable the mod under **Options -> Mods**. If you already
 run another market mod, turn that one off - two assistants trading the same
 market will fight.
 
-## How it works
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## How It Works
 
 **Quantiles.** For a target quantile `p`, nudging an estimate up by `lr*p` when
 a sample lands above it and down by `lr*(1-p)` when it lands below converges
@@ -90,6 +126,8 @@ into the Dough Jones graph as dotted medians with a shaded 10-90 band.
 about 2 KB of JSON. The mod never calls `buyGood` with exactly 10,000 units
 (the game reads that as "as many as the bank allows"). Source is ASCII-only,
 because the game injects mod scripts without a declared charset.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Development
 
@@ -121,6 +159,16 @@ files from a local Steam install. The full suite takes about 80 minutes.
 | `moddev/loans.js` | are the Bank's loans ever worth taking? |
 | `moddev/sim.js` | the trading benchmark |
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## License
 
 Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Acknowledgments
+
+- [Orteil's Cookie Clicker](https://orteil.dashnet.org/cookieclicker/) - the game this mod reads everything from
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

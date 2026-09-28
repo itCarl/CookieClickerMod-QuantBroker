@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#0b1210"/>
+  <!-- crest ring -->
+  <circle cx="256" cy="256" r="196" fill="none" stroke="#1e3325" stroke-width="6"/>
+  <circle cx="256" cy="256" r="180" fill="#0f1a14" stroke="#2c4a33" stroke-width="4"/>
+  <!-- cookie with a clean bite at the rim -->
+  <g>
+    <circle cx="256" cy="250" r="122" fill="#d0a04a"/>
+    <circle cx="256" cy="250" r="122" fill="none" stroke="#8a6428" stroke-width="8"/>
+    <!-- bite: one big chomp plus two nibble arcs, cut in panel color -->
+    <circle cx="352" cy="164" r="44" fill="#0f1a14"/>
+    <circle cx="316" cy="146" r="18" fill="#0f1a14"/>
+    <circle cx="372" cy="212" r="16" fill="#0f1a14"/>
+    <g fill="#7a5220">
+      <circle cx="206" cy="212" r="14"/>
+      <circle cx="288" cy="240" r="12"/>
+      <circle cx="230" cy="292" r="13"/>
+      <circle cx="176" cy="268" r="10"/>
+      <circle cx="300" cy="312" r="10"/>
+      <circle cx="262" cy="180" r="9"/>
+    </g>
+  </g>
+  <!-- ascending candlesticks in front -->
+  <g>
+    <rect x="163" y="266" width="6" height="98" rx="3" fill="#e8f5d8"/>
+    <rect x="148" y="290" width="36" height="52" rx="7" fill="#c23b3b"/>
+    <rect x="233" y="230" width="6" height="118" rx="3" fill="#e8f5d8"/>
+    <rect x="218" y="252" width="36" height="66" rx="7" fill="#94cd50"/>
+    <rect x="303" y="196" width="6" height="112" rx="3" fill="#e8f5d8"/>
+    <rect x="288" y="222" width="36" height="58" rx="7" fill="#94cd50"/>
+    <rect x="366" y="238" width="6" height="96" rx="3" fill="#e8f5d8"/>
+    <rect x="352" y="260" width="34" height="50" rx="7" fill="#94cd50"/>
+  </g>
+</svg>
